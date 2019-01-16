@@ -1,3 +1,4 @@
+# Testing PNC
 resource "vsphere_virtual_machine" "vm" {
   count            = "${var.instances}"
   name             = "${var.vmname_prefix}${var.vmname}${count.index+1}"
