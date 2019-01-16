@@ -21,7 +21,7 @@ export VSPHERE_ALLOW_UNVERIFIED_SSL=true
 4. Clone this repo to your local directory. 
 
 ```
-git clone git@github.com:Arslan-SE/CBS.git
+git clone git@github.com:Arslan-SE/PNC.git
 ```
 
 5. Destroy the changes and provision resources (if any).
