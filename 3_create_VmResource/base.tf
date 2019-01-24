@@ -4,7 +4,7 @@ resource "vsphere_folder" "folder" {
   path          = "${var.prefix}${var.vmfolder}"
   type          = "vm"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
-  tags = ["${vsphere_tag.tag.id}"]
+  //tags = ["${vsphere_tag.tag.id}"]
   //custom_attributes = "${map(vsphere_custom_attribute.attribute.id, "${var.attributeValue}")}"
 
 }
@@ -16,6 +16,7 @@ resource "vsphere_custom_attribute" "attribute" {
   managed_object_type = "Folder"
 }
 
+/*
 // vSphere Tag Category (SINGLE or MULTIPLE)
 resource "vsphere_tag_category" "category" {
   name        = "${var.tagCategory}"
@@ -27,10 +28,12 @@ resource "vsphere_tag_category" "category" {
     "Folder",
   ]
 }
-
+  
 // vSphere Tag
 resource "vsphere_tag" "tag" {
   name        = "${var.tag}"
   category_id = "${vsphere_tag_category.category.id}"
   description = "Managed by Terraform"
 }
+
+*/
