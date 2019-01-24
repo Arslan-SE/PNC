@@ -30,16 +30,18 @@
   variable "attributeValue" {
     description = "The attribute value"
   }
-
+/*
   // VM Name
   variable "tagCategory" {
     description = "The Tag Category Name"
   }
+
+
   // VM Name prefix 
   variable "tag" {
     description = "The Tag Name"
   }
-
+*/
 
 #### NETWORKING ####
 
