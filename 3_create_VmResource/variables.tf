@@ -102,6 +102,20 @@
       default = "vsphere.local"
     }
 
+    variable "app" {
+      description = "App type to install on the base image"
+      default = "tomcat"
+    }
+
+    variable "ansible_host_addr" {
+      description = "Ansible server host"
+      default = "18.221.199.1"
+    }
+
+   variable "var.ssh_private_key" {
+      description = "Private key to access the Ansible server"
+    }
+
 /*
 #### WINDOWS ####
 

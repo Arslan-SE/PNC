@@ -1,3 +1,4 @@
+# Testing PNC
 resource "vsphere_virtual_machine" "vm" {
   count            = "${var.instances}"
   name             = "${var.vmname_prefix}${var.vmname}${count.index+1}"
@@ -51,4 +52,25 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   custom_attributes = "${map(vsphere_custom_attribute.attribute.id, "${var.attributeValue}")}"
+}
+
+resource "null_resource" "run-ansible-playbook" {
+
+  count = "${var.instances}"
+
+  connection {
+    type = "ssh"
+    host = "var.ansible_host_addr"
+    user = "ubuntu"
+    private_key = "var.ssh_private_key"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+     "ansible-playbook ~/ansible-samples/${var.app}.yml -e 'ansible_python_interpreter=/usr/bin/python3' -i ${element(vsphere_virtual_machine.vm.*.public_ip, count.index)},",
+    ]
+  }
+
+  depends_on = ["vsphere_virtual_machine.vm"]
+
 }
