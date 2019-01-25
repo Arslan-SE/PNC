@@ -8,7 +8,7 @@ resource "vsphere_folder" "folder" {
   //custom_attributes = "${map(vsphere_custom_attribute.attribute.id, "${var.attributeValue}")}"
 
 }
-
+/*
 // Apply attribute to the folder
 // https://www.terraform.io/docs/providers/vsphere/r/custom_attribute.html
 resource "vsphere_custom_attribute" "attribute" {
@@ -16,7 +16,7 @@ resource "vsphere_custom_attribute" "attribute" {
   managed_object_type = "Folder"
 }
 
-/*
+
 // vSphere Tag Category (SINGLE or MULTIPLE)
 resource "vsphere_tag_category" "category" {
   name        = "${var.tagCategory}"
