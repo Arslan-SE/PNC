@@ -67,7 +67,7 @@ resource "null_resource" "run-ansible-playbook" {
 
   provisioner "remote-exec" {
     inline = [
-     "ansible-playbook ~/ansible-samples/${var.app}.yml -e 'ansible_python_interpreter=/usr/bin/python3' -i ${element(vsphere_virtual_machine.vm.*.public_ip, count.index)},",
+     "ansible-playbook ~/ansible-samples/${var.app}.yml -e 'ansible_python_interpreter=/usr/bin/python3' -i ${element(vsphere_virtual_machine.vm.*.default_ip_address, count.index)},",
     ]
   }
 
