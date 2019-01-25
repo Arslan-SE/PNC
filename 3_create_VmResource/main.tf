@@ -60,9 +60,9 @@ resource "null_resource" "run-ansible-playbook" {
 
   connection {
     type = "ssh"
-    host = "var.ansible_host_addr"
+    host = "${var.ansible_host_addr}"
     user = "ubuntu"
-    private_key = "var.ssh_private_key"
+    private_key = "${var.ssh_private_key}"
   }
 
   provisioner "remote-exec" {
