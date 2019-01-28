@@ -15,6 +15,6 @@ resource "null_resource" "run-ansible-playbook" {
     ]
   }
 
-  depends_on = ["vsphere_virtual_machine.vm"]
+#  depends_on = ["vsphere_virtual_machine.vm"]
 
 }
