@@ -1,4 +1,4 @@
-variable count {}
+variable instances {}
 variable ansible_host_addr {}
 variable ssh_private_key {}
 variable app {}
