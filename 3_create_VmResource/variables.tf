@@ -15,30 +15,22 @@ variable "datastore" {}
 // Folder Name
 variable "vmfolder" {}
 
-// Name of VM Template
-variable "vmtemplate" {
-  description = "Name of the template available in the vSphere"
-}
+  // Attribute Name 
+  variable "attributeValue" {
+    description = "The attribute value"
+  }
+/*
+  // VM Name
+  variable "tagCategory" {
+    description = "The Tag Category Name"
+  }
 
-// Attribute Name 
-variable "attribute" {
-  description = "The attribute Name"
-}
 
-// Attribute Name 
-variable "attributeValue" {
-  description = "The attribute value"
-}
-
-// VM Name
-variable "tagCategory" {
-  description = "The Tag Category Name"
-}
-
-// VM Name prefix 
-variable "tag" {
-  description = "The Tag Name"
-}
+  // VM Name prefix 
+  variable "tag" {
+    description = "The Tag Name"
+  }
+*/
 
 #### NETWORKING ####
 
@@ -109,6 +101,20 @@ variable "vmdomain" {
   description = "default VM domain for linux guest customization or Windows when join_windomain is selected"
   default     = "vsphere.local"
 }
+
+    variable "app" {
+      description = "App type to install on the base image"
+      default = "tomcat"
+    }
+
+    variable "ansible_host_addr" {
+      description = "Ansible server host"
+      default = "18.221.199.1"
+    }
+
+   variable "ssh_private_key" {
+      description = "Private key to access the Ansible server"
+    }
 
 /*
 #### WINDOWS ####

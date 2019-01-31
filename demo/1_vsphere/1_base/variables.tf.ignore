@@ -1,0 +1,11 @@
+variable "dc" {
+  description = "Name of the datacenter you want to deploy the VM to"
+}
+variable "cluster" {}
+variable "datastore" {}
+variable "vmtemplate" {
+  description = "Name of the template in the vSphere"
+}
+variable "vnet" {
+  description = "Virtual Network Name where the VM should be deployed"
+}
