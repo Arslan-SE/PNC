@@ -1,12 +1,12 @@
 # SETUP
-variable "prefix" {}
+variable "use_case_name" {}
 
 # TFE 
 variable "tfe_user_token" {}
 variable "org" {}
 variable "hostname" {}
 variable "vcs_identifier" {}
-variable "creator_vcs_identifier" {}
+variable "base_vcs_identifier" {}
 variable "tfe_oauth_token" {}
 variable "tfe_org_token" {}
 
